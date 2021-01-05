@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/canimmunize..iml" filepath="$PROJECT_DIR$/.idea/canimmunize..iml" />
+      <module fileurl="file://$PROJECT_DIR$/../canimmunize/.idea/canimmunize.iml" filepath="$PROJECT_DIR$/../canimmunize/.idea/canimmunize.iml" />
     </modules>
   </component>
 </project>

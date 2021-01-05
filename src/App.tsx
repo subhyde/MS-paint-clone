@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container, Header, Navbar } from "rsuite";
+import "./App.css";
+import Toolbar from "./components/Toolbar";
+import "rsuite/dist/styles/rsuite-default.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Header>
+          <Navbar style={{ paddingBottom: "20px" }} appearance="inverse">
+            <Navbar.Header>
+              <h4 className={"titlebar"}>
+                CANimmunize Technical Assessment: Ethan Johnson
+              </h4>
+            </Navbar.Header>
+          </Navbar>
+        </Header>
+        <Toolbar />
+      </Container>
     </div>
   );
 }

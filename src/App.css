@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.titlebar{
+  width: auto;
+  height: auto;
+  padding-top: 7px;
+  padding-left: 15px;
+
+}
