@@ -47,6 +47,7 @@ function Grid(grid: any) {
 
     //setting the background colour of the current div
     node.style.backgroundColor = colour.toString();
+
     // a 4 way flood fill algorithm, going right, left, up, down
     handleFill(document.getElementById(String(parseInt(node.id) + 1)), colour);
     handleFill(document.getElementById(String(parseInt(node.id) - 1)), colour);
@@ -70,7 +71,6 @@ function Grid(grid: any) {
     } else {
       //converting the hex value to rgb and removing the #
       let colour = hex2RBG(grid.colour.substring(1));
-      console.log("testing the colour that should be converted", colour);
       handleFill(target, colour);
     }
   }
