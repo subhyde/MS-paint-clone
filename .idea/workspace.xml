@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d21537ce-e4cc-474f-969f-64e02ed6e35a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Grid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Toolbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/canimmunize..iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/canimmunize.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+    <list default="true" id="d21537ce-e4cc-474f-969f-64e02ed6e35a" name="Default Changelist" comment="finished project">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +80,24 @@
       <workItem from="1609733408143" duration="4316000" />
       <workItem from="1609786091574" duration="3643000" />
       <workItem from="1609815503646" duration="6314000" />
-      <workItem from="1609870466558" duration="13215000" />
+      <workItem from="1609870466558" duration="13357000" />
+      <workItem from="1609974612622" duration="9926000" />
     </task>
+    <task id="LOCAL-00001" summary="finished project">
+      <created>1609883781587</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609883781587</updated>
+    </task>
+    <task id="LOCAL-00002" summary="debug -- fixing colour fill">
+      <created>1609984595099</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609984595100</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +114,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished project" />
+    <MESSAGE value="debug -- fixing colour fill" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug -- fixing colour fill" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -4,6 +4,7 @@ import "rsuite/dist/styles/rsuite-default.css";
 import "./Grid.css";
 
 function Grid(grid: any) {
+  //hex to rgb converter. we have to do this because the colour picker we are using passes rgb as an array, so hex is easier to mutate
   const hex2RBG = (hex: any) => {
     let aRgbHex = hex.match(/.{1,2}/g);
     let aRgb = [
@@ -15,14 +16,16 @@ function Grid(grid: any) {
   };
 
   const handleFill = (id: any, colour: any) => {
+    //simple check to make sure that the div exists
     if (id === null) {
       return;
     }
-    console.log(colour);
-    console.log(id.style.backgroundColor);
-    console.log(id.style.backgroundColor === colour);
+
+    //getting the row and column of the div
     let row = Math.floor(id.id / grid.gridColumns);
     let col = id.id % grid.gridColumns;
+
+    //since we are using a "pseudo 2d array" we have to alter some of the values
     if (col === 0) {
       col = grid.gridColumns;
     }
@@ -30,31 +33,21 @@ function Grid(grid: any) {
       row = 1;
     }
 
-    if (row <= 0 || row > grid.gridRows) {
-      return;
-    }
-    if (col <= 0 || col > grid.gridColumns) {
-      return;
-    }
+    //check to make sure that we do not go out of bounds of the current grid, and that we are not wasting resources and filling the same div twice with the same colour
     const node = id;
-
-    if (node.style.backgroundColor === colour) {
-      console.log("same color check stopped");
-      console.log(grid.colourStorage);
-
-      console.log(colour);
-      console.log(id.style.backgroundColor);
-      console.log(id.style.backgroundColor === colour);
+    if (
+      row <= 0 ||
+      row > grid.gridRows ||
+      col <= 0 ||
+      col > grid.gridColumns ||
+      node.style.backgroundColor === colour
+    ) {
       return;
     }
 
-    // if (node.style.backgroundColor !== colour && grid.colour.includes(colour)) {
-    //   console.log("background colour check thing");
-    //   return;
-    // }
-
+    //setting the background colour of the current div
     node.style.backgroundColor = colour.toString();
-
+    // a 4 way flood fill algorithm, going right, left, up, down
     handleFill(document.getElementById(String(parseInt(node.id) + 1)), colour);
     handleFill(document.getElementById(String(parseInt(node.id) - 1)), colour);
     handleFill(
