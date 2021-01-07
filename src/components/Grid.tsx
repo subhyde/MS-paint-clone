@@ -1,13 +1,26 @@
 import React from "react";
-import "rsuite/dist/styles/rsuite-default.css";
 import "rsuite-color-picker/lib/styles.css";
+import "rsuite/dist/styles/rsuite-default.css";
 import "./Grid.css";
 
 function Grid(grid: any) {
+  const hex2RBG = (hex: any) => {
+    let aRgbHex = hex.match(/.{1,2}/g);
+    let aRgb = [
+      parseInt(aRgbHex[0], 16),
+      parseInt(aRgbHex[1], 16),
+      parseInt(aRgbHex[2], 16),
+    ];
+    return "rgb(" + aRgb.join(", ") + ")";
+  };
+
   const handleFill = (id: any, colour: any) => {
-    if (id == null) {
+    if (id === null) {
       return;
     }
+    console.log(colour);
+    console.log(id.style.backgroundColor);
+    console.log(id.style.backgroundColor === colour);
     let row = Math.floor(id.id / grid.gridColumns);
     let col = id.id % grid.gridColumns;
     if (col === 0) {
@@ -25,37 +38,36 @@ function Grid(grid: any) {
     }
     const node = id;
 
-    if (node.style.backgroundColor === grid.colour) {
-      return;
-    }
-    if (
-      node.style.backgroundColor !== "rgb(255, 255, 255)" &&
-      node.style.backgroundColor !== "rgb(254, 255, 255)"
-    ) {
+    if (node.style.backgroundColor === colour) {
+      console.log("same color check stopped");
+      console.log(grid.colourStorage);
+
+      console.log(colour);
+      console.log(id.style.backgroundColor);
+      console.log(id.style.backgroundColor === colour);
       return;
     }
 
-    node.style.backgroundColor = colour;
+    // if (node.style.backgroundColor !== colour && grid.colour.includes(colour)) {
+    //   console.log("background colour check thing");
+    //   return;
+    // }
 
-    handleFill(
-      document.getElementById(String(parseInt(node.id) + 1)),
-      grid.colour
-    );
-    handleFill(
-      document.getElementById(String(parseInt(node.id) - 1)),
-      grid.colour
-    );
+    node.style.backgroundColor = colour.toString();
+
+    handleFill(document.getElementById(String(parseInt(node.id) + 1)), colour);
+    handleFill(document.getElementById(String(parseInt(node.id) - 1)), colour);
     handleFill(
       document.getElementById(
         String(parseInt(node.id) - parseInt(grid.gridColumns))
       ),
-      grid.colour
+      colour
     );
     handleFill(
       document.getElementById(
         String(parseInt(node.id) + parseInt(grid.gridColumns))
       ),
-      grid.colour
+      colour
     );
   };
 
@@ -63,7 +75,10 @@ function Grid(grid: any) {
     if (grid.toolButtons.pen) {
       target.style.backgroundColor = grid.colour;
     } else {
-      handleFill(target, grid.colour);
+      //converting the hex value to rgb and removing the #
+      let colour = hex2RBG(grid.colour.substring(1));
+      console.log("testing the colour that should be converted", colour);
+      handleFill(target, colour);
     }
   }
 

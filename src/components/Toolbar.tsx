@@ -27,6 +27,7 @@ function Toolbar() {
   const [toolButtons, setToolButtons] = useState({ pen: true, bucket: false });
   const [showGrid, setShowGrid] = useState(false);
   const [resetGrid, setResetGrid] = useState(false);
+  const [colourStorage, setColourStorage] = useState(["rgb(0, 188, 212)"]);
 
   function open() {
     Notification["warning"]({
@@ -131,6 +132,7 @@ function Toolbar() {
                 defaultValue={"#00BCD4"}
                 onChange={(color) => {
                   setColour(color.hex);
+                  setColourStorage([...colourStorage, color.rgb]);
                 }}
               />
             </FormGroup>
@@ -163,6 +165,7 @@ function Toolbar() {
               toolButtons={toolButtons}
               showGrid={showGrid}
               resetGrid={resetGrid}
+              colourStorage={colourStorage}
             />
           </Panel>
         </FlexboxGrid.Item>
