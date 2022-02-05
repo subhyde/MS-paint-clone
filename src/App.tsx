@@ -8,15 +8,6 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Header>
-          <Navbar style={{ paddingBottom: "20px" }} appearance="inverse">
-            <Navbar.Header>
-              <h4 className={"titlebar"}>
-                CANimmunize Technical Assessment: Ethan Johnson
-              </h4>
-            </Navbar.Header>
-          </Navbar>
-        </Header>
         <Toolbar />
       </Container>
     </div>
